@@ -34,7 +34,7 @@ struct ItemDetail: View {
             Spacer()
                }
                .navigationTitle(item.name)
-               .navigationBarTitleDisplayMode(.inline)
+              .navigationBarTitleDisplayMode(.inline)
     }
 }
 

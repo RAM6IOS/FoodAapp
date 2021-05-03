@@ -9,6 +9,7 @@ import SwiftUI
 
 struct iDineApp: View {
     @StateObject  var settings = GameSettings()
+    @StateObject var order = Order()
 
    
     var body: some View {
@@ -19,8 +20,13 @@ struct iDineApp: View {
                             settings.score += 1
                         }
 
-                        NavigationLink(destination: ScoreView()) {
-                            Text("Show Detail View")
+                        
+                        NavigationLink(destination: MainView()
+                            .environmentObject(order)
+                            .navigationBarTitleDisplayMode(.inline)
+                                       
+                        ) {
+                            Text("Show  TipView")
                         }
                     }
                     .frame(height: 200)
